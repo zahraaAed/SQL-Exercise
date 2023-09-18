@@ -48,3 +48,22 @@ WHERE Date < 2000;
 SELECT CompanyName
 FROM EmployeeCompanytable
 WHERE Role = 'Graphic Designer';
+#count-filter
+SELECT name
+FROM students
+WHERE points = (SELECT MAX(points) FROM students);
+#19
+SELECT AVG(points)
+FROM students;
+#20
+SELECT COUNT(*)
+FROM students
+WHERE points = 500;
+#21
+SELECT name
+FROM students
+WHERE name LIKE '%s%';
+#22
+SELECT *
+FROM students
+ORDER BY points DESC;
