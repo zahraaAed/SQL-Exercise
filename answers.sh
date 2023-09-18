@@ -32,3 +32,19 @@ SELECT Name, Age, Gender, Points, '08/09/2018'
 FROM students
 WHERE Name = 'Layal';
 DELETE * from students where name='Layal';
+#join
+SELECT *
+FROM (
+    SELECT employees.Name AS EmployeeName, Companies.Name AS CompanyName, Companies.Date
+    FROM employees
+    INNER JOIN Companies
+    ON employees.ID = Companies.ID
+) AS Employeecompanytable;
+#15
+SELECT EmployeeName
+FROM EmployeeCompanytable
+WHERE Date < 2000;
+#16
+SELECT CompanyName
+FROM EmployeeCompanytable
+WHERE Role = 'Graphic Designer';
